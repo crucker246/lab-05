@@ -83,7 +83,7 @@ glimpse(candy_df)
 How many observations and variables are in this dataset?
 Did you identify the type of variables, remember that this detail is crucial to create which kind of data visualization in general. 
 
-_Write your comments about results_
+In the data, there are 13x85 = 1105 obseravtions and there are 85 variables (some character, logical and double)
 
 # Data viz - One variable at a time
 
@@ -99,8 +99,12 @@ candy_df <- candy_df %>%
 Complete the following code to get the data viz to represent "how many candies contain caramel via bar plot". Fill in the blanks, remove the # symbol in front of your code and the execute the code chunk via green play button.
 
 ```{r}
-# ggplot(candy_rankings, aes(x = ______)) +
-#  _____() +
+ggplot(candy_rankings, aes(x = caramel)) +
+  geom_bar() +
+  labs(
+    x = "Candy type",
+    y = "Contains caramel"
+  )
 ```
 
 ## Exercise 3
@@ -108,7 +112,13 @@ Complete the following code to get the data viz to represent "how many candies c
 Now look at a numerical variable, such as `winpercent`. Create an histogram for this variable using ggplot2 functions below. Include informative x and y labels and a title, as a good practice.
 
 ```{r}
-# Your code here
+ggplot(candy_rankings, aes(x = winpercent)) +
+    geom_histogram(bins = 20) +
+    labs(
+        x = "Win percentage",
+        y = "Candy"
+    )
+
 
 ```
 
@@ -123,9 +133,9 @@ Fill in the blanks, remove the # symbol in front of your code and the execute th
 
 ```{r}
 # Your code here
-#ggplot(candy_df, aes(x = ___________)) +
-#  geom_histogram() +
-#  facet_wrap(___________)
+ggplot(candy_df, aes(x = winpercent, fill = caramel)) +
+  geom_histogram() +
+  facet_wrap(~chocolate)
 
 ```
 
@@ -137,7 +147,9 @@ Fill in the blanks, remove the # symbol in front of your code and the execute th
 Create a visualization that examines the relationship between a candy’s win percentage and whether it contains chocolate. Include x and y labels and a title. Describe any relationship you see.
 
 ```{r}
-# your code here
+ggplot(candy_df, aes(x = winpercent)) +
+  geom_density() +
+  facet_wrap(~chocolate)
 
 ```
 
@@ -159,8 +171,16 @@ candy_rankings %>%
 
 Do more expensive candies win more often? Make a scatterplot of pricepercent (x) against winpercent (y). Describe their relationship.  
 
+There is no obvious relationship between pricepercent and winpercent.
+
 ```{r}
-# your code here
+ggplot(candy_df, aes(x = pricepercent, y = winpercent, colour = chocolate)) +
+    geom_point() +
+    labs(
+        x = "Price percentage",
+        y = "Win percentage"
+    ) + 
+  facet_wrap(~bar)
 
 ```
 
@@ -173,8 +193,15 @@ Do more expensive candies win more often? Make a scatterplot of pricepercent (x)
 
 Are chocolate candies more likely to be candy bars? Make a filled bar plot with chocolate on the x-axis and fill = bar. Describe what you see.
 
+Chocolate bars are much more likely to be a candy bar as shown by the graph because on the TRUE side of the x axis, there is a much greater blue bar than on the left side, showing chocolate is more likely to be a bar.
+
 ```{r}
-# Your code here
+ggplot(candy_df, aes(x = chocolate, fill = bar)) +
+  geom_bar() +
+  labs(
+    x = "Chocolate",
+  )
+
 
 ```
 
