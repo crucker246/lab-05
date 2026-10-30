@@ -21,7 +21,7 @@ library(ggplot2)
 knitr::include_graphics("img/Speaking-the-world.jpg")
 ```
 
-_Write your comments about image 1 below_
+The first 9 rows of the data are all the same width, but because Chinese is so big, it has a different width to the others, making it difficult to comprehend how widely spoken Chinese is. It would probably be better to do this box plot vertically and have them all the same width to show just how many people speak Chinese in comparison to all the other languages.
 
 
 
@@ -32,7 +32,7 @@ _Write your comments about image 1 below_
 knitr::include_graphics("img/rose-pop-density-total-area-bw.jpg")
 ```
 
-_Write your comments about image 2 below_
+Provides a nice pie chart visual but fails to show any actual quantitatuve data, meaning people have to guess or estimate countries population density and total area. This would probably be better as a box plot rather than a pie chart as well.
 
 
 
@@ -43,7 +43,7 @@ _Write your comments about image 2 below_
 knitr::include_graphics("img/life-expectancy-rule-of-law.png")
 ```
 
-_Write your comments about image 3 below_
+The scatter diagram is extremely crowded and difficult to distinguish between each data point. There is also no key to inform the reader what the opacity or colours mean and again there is no scale on the axis so readers are forced to infer what each point's value is.
 
 
 
@@ -54,7 +54,7 @@ _Write your comments about image 3 below_
 knitr::include_graphics("img/global-income-dist.PNG")
 ```
 
-_Write your comments about image 4 below_
+Quite a difficult graph to visually understand. Whilst it makes good use of colours to distinguish between countries, it is quite a cramped graph. It does include data on the x axis, which is informative, but none on the y (although it is not really required as the area under the graph represents the regional size of the population)
 
 
 
